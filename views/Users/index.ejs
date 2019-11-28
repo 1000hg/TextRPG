@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+</head>
+<body>
+	<div class="container">
+		
+		<h1>User List</h1>
+		
+		<% if(users.length > 0){ %>
+		<table>
+			<thead>
+				<tr>
+					<th>User Name</th>
+					<th>User id</th>
+					<th>User pw</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% for(var i = 0; i < users.length; i++){ %>
+				<tr>
+					<td><%= users[i].name %></td>
+					<td><%= users[i].id %></td>
+					<td><%= users[i].password %></td>
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
+		<% } else { %>
+			<div>No users found</div>
+			<% } %>
+	</div>
+</body>
+</html>
