@@ -1,2 +1,2 @@
 # TextRPG
-make TextRPG to use JavaScript and Mongodb
+will be make TextRPG to use JavaScript and Mongodb
