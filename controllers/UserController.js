@@ -1,7 +1,28 @@
 var User = require("../models/User");
+var Character = require("../models/Character");
 
 var userController = {};
 
+function saveCharacterInfo(user){
+	var info = {id: user._id, name: user.name, level:1, hp:100, mp:100, atk:10, def:10, luk:10, exp:0}
+	console.log(info);
+	var character = new Character(info);
+		
+	character.save(function(err){
+		if(err)
+		{
+			if(err.code == 11000)
+			{
+				console.log("Character does not exist");
+			}
+			console.log("Failed save");
+		}
+		else
+		{
+			console.log("Success save char");
+		}
+	})
+}
 
 userController.main = function(req, res){
 	res.render("../views/Users/main");
@@ -38,6 +59,7 @@ userController.save = function(req, res){
 		else
 		{
 			console.log("Success save");
+			saveCharacterInfo(user);
 			res.redirect("/users");
 		}
 	})
@@ -51,13 +73,20 @@ userController.check = function(req, res){
         else if(!user) return res.status(404).json({error: 'user not found'});
 		else
 		{
-        	console.log("success");
-			res.render("../views/Users/login", {
-				user: user
-			});
+        	console.log("login success");
+			Character.findOne({id:user._id}, function(err, character){
+				if(err) console.log("505Error");
+				else if(!character) return res.status(404).json({error : 'character not found'});
+				else{
+					console.log("character upload");
+					res.render("../views/Users/login", {character: character});
+				}		
+			})
+
 		}
     });
 }
+
 
 
 

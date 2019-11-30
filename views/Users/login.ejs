@@ -5,6 +5,33 @@
 	<title>Document</title>
 </head>
 <body>
-	success
+		<table>
+			<thead>
+				<tr>
+					<th>User Name</th>
+					<th>User level</th>
+					<th>User hp</th>
+					<th>User mp</th>
+					<th>User atk</th>
+					<th>User def</th>
+					<th>User luk</th>
+					<th>User exp</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= character.name %></td>
+					<td><%= character.level %></td>
+					<td><%= character.hp %></td>
+					<td><%= character.mp %></td>
+					<td><%= character.atk %></td>
+					<td><%= character.def %></td>
+					<td><%= character.luk %></td>
+					<td><%= character.exp %></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<a href="/users/match/<%= character._id %>">gogogogogo</a>
 </body>
 </html>

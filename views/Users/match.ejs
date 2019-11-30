@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>match</title>
+</head>
+
+<body>
+	<p>쿠아아앙 <%= enemy.name %>가 나타났다.</p>
+
+	<p><%= enemy.level %></p>
+	<p><%= enemy.hp %></p>
+	<p><%= enemy.mp %></p>
+	<p><%= enemy.atk %></p>
+	<p><%= enemy.def %></p>
+	<p><%= enemy.luk %></p>
+	<p><%= enemy.exp %></p>
+	
+	<a href="/users/attack/<%= character._id %>/<%= enemy._id %>">기본 공격</a>
+</body>
+
+</html>
+
+
