@@ -16,6 +16,10 @@ router.post('/check', user.check);
 
 router.get('/match/:id', character.match);
 
+router.get('/run/:id', character.run);
+
+router.get('/fight/:id/:enemyId', character.fight);
+
 router.get('/attack/:id/:enemyId', character.attack);
 
 

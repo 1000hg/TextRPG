@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>이름 : <%= enemy.name %></p>
+
+	<p>레벨 : <%= enemy.level %></p>
+	<p>채력 : <%= enemy.hp %></p>
+	<p>마나 : <%= enemy.mp %></p>
+	<p>공격력 : <%= enemy.atk %></p>
+	<p>방어력 : <%= enemy.def %></p>
+	<p>운빨 : <%= enemy.luk %></p>
+	<p>획득 경험치 : <%= enemy.exp %></p>
+	
+	<a href="/users/attack/<%= character._id %>/<%= enemy._id %>">기본 공격</a>
+</body>
+</html>

@@ -5,7 +5,7 @@ var userController = {};
 
 function saveCharacterInfo(user){
 	var info = {id: user._id, name: user.name, level:1, hp:100, mp:100, atk:10, def:10, luk:10, exp:0}
-	console.log(info);
+	//console.log(info);
 	var character = new Character(info);
 		
 	character.save(function(err){
